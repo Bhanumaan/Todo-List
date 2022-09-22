@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo List</title>
+</head>
+<body>
+<h1> ToDo List </h1>
+<ul>
+    {% for task in tasks %}
+        <li> {{task}} </li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'app:index'  %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" name="button">ADD</button>
+</form>
+</body>
+</html>
